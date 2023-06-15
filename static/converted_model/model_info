@@ -1,0 +1,3 @@
+Model is a convolutional neural network with 5 corresponding weight files. The model is a very small sequential
+model that uses a couple conv2d layers, avg and max pooling, and dense layers at the end, utilizing PReLU
+activation.
