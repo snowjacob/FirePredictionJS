@@ -1,0 +1,11 @@
+{
+    "name": "firepredictionjs",
+    "version": "1.0.0",
+    "dependencies": {
+        "@tensorflow/tfjs": "^4.7.0",
+        "@tensorflow/tfjs-node": "^4.7.0",
+        "ejs": "^3.1.9",
+        "express": "latest",
+        "node-fetch": "^3.3.1"
+    }
+}
