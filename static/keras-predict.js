@@ -17,11 +17,11 @@ let model;
 
 $("#predict-button").click(async function () {
     let image = $('#selected-image').get(0);
-    let tensor = tf.fromPixels(image)
+    let tensor = tf.browser.fromPixels(image)
         .resizeNearestNeighbor([350, 350])
         .toFloat()
         .expandDims();
     let prediction = await model.predict(tensor).array();
     $("#prediction-list").empty();
-    $("#prediction-list").append('Wildfire Likelihood: ' + prediction[0].toFixed(4));
+    $("#prediction-list").append('Wildfire Likelihood: ' + (Number(prediction[0]).toFixed(4)) * 100 + '%');
 });
