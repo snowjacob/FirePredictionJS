@@ -9,9 +9,9 @@ $("#image-selector").change(function () {
     reader.readAsDataURL(file);
 });
 
-var model = "";
+let model;
 (async function () {
-    model = await tf.loadLayersModel('http://localhost:32/converted_model/model.json', false);
+    model = await tf.loadLayersModel('http://localhost:32/converted_model/model.json');
     $(".progress-bar").hide();
 })();
 
