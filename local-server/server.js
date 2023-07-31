@@ -7,6 +7,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Define a route to serve the tfjs-predict.html file from the 'static' folder
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/static/tfjs-predict.html");
 });
