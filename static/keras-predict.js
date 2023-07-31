@@ -11,7 +11,7 @@ $("#image-selector").change(function () {
 
 let model;
 (async function () {
-    model = await tf.loadLayersModel('http://localhost:10000/converted_model/model.json');
+    model = await tf.loadLayersModel('/static/converted_model/model.json');
     $(".progress-bar").hide();
 })();
 
