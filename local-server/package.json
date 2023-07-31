@@ -1,6 +1,9 @@
 {
     "name": "firepredictionjs",
     "version": "1.0.0",
+    "scripts": {
+        "start" : "node server.js"
+    },
     "dependencies": {
         "@tensorflow/tfjs": "^4.7.0",
         "@tensorflow/tfjs-node": "^4.7.0",
