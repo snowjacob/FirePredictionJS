@@ -7,7 +7,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static("./static"));
+app.use(express.static(__dirname + "/static"));
 
 app.listen(port, function () {
   console.log(`Serving static on port ${port}`);
