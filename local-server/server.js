@@ -7,7 +7,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static(__dirname + "/static"));
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/static/tfjs-predict.html");
+});
+
+app.use(express.static("./static"));
 
 app.listen(port, function () {
   console.log(`Serving static on port ${port}`);
