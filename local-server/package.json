@@ -2,7 +2,8 @@
     "name": "firepredictionjs",
     "version": "1.0.0",
     "scripts": {
-        "start" : "node server.js"
+        "start": "node local-server/server.js",
+        "build": "cd local-server && npm install"
     },
     "dependencies": {
         "@tensorflow/tfjs": "^4.7.0",
@@ -10,6 +11,5 @@
         "ejs": "^3.1.9",
         "express": "latest",
         "node-fetch": "^3.3.1"
-    },
-    "build" : "npm install"
+    }
 }
