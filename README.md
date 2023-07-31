@@ -1,6 +1,6 @@
 # 🚒 FirePredictionJS
 
-FirePredictionJS is a project that utilizes a machine learning model to predict wildfires. This project focuses on the deployment of the model using TensorFlow.js, allowing users to run the prediction locally on their machines.
+FirePredictionJS is a project that utilizes a machine learning model to predict wildfires. This project focuses on the deployment of the model using TensorFlow.js, allowing users to run the prediction locally on their machines. You can try out the application [here](https://fire-prediction-js.onrender.com/)!
 
 ## Project Structure
 
