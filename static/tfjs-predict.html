@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <title>Wildfire Prediction</title>
 </head>
 
 <body>
     <main>
-        <div class = "container mt-5">
-            <div class = "row">
-                <div class = "col-12">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12">
                     <h1>Wildfire Prediction (Using Satellite Imagery)</h1>
                 </div>
             </div>
-            <div class = "row">
-                <div class = "col-6">
-                    <div class = "progress progress-bar progress-bar-striped progress-bar-animated mb-2" style = "height: 10px">Loading Model</div>
-                </div>
-            </div>
-            <hr>
-            <div class = "row">
-                <div class = col-6>
-                    <input id = "image-selector" class = "form-control" type = "file">
-                </div>
-                <div class = col-6>
-                    <button id = "predict-button" class = "btn btn-success">Predict</button>
+            <div class="row">
+                <div class="col-6">
+                    <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2"
+                        style="height: 10px">Loading Model</div>
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class = "col">
-                    <h2 class = "ml-3">Predictions</h2>
-                    <ol id = "prediction-list" class = "ml-3"></ol>
+                <div class=col-6>
+                    <input id="image-selector" class="form-control" type="file">
+                </div>
+                <div class=col-6>
+                    <button id="predict-button" class="btn btn-success">Predict</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="ml-3">Predictions</h2>
+                    <ol id="prediction-list" class="ml-3"></ol>
                 </div>
             </div>
             <hr>
@@ -41,12 +44,57 @@
                     <img id="selected-image" class="img-fluid ml-3" src="" />
                 </div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="ml-3">Sample Images</h2>
+                    <!-- Section: Wildfire Occurred -->
+                    <h4 class="ml-3">Wildfire Occurred</h4>
+                    <div class="sample-images ml-3">
+                        <img src="./images/-59.03238,51.85132.jpg" alt="Wildfire 1" class="img-thumbnail">
+                        <img src="./images/-60.6867,50.26079.jpg" alt="Wildfire 2" class="img-thumbnail">
+                        <img src="./images/-60.73875,50.24761.jpg" alt="Wildfire 3" class="img-thumbnail">
+                    </div>
+
+                    <!-- Section: No Wildfire Occurred -->
+                    <h4 class="ml-3">No Wildfire Occurred</h4>
+                    <div class="sample-images ml-3">
+                        <img src="./images/-73.535,45.480806.jpg" alt="No Wildfire 1" class="img-thumbnail">
+                        <img src="./images/-73.602,45.421799.jpg" alt="No Wildfire 2" class="img-thumbnail">
+                        <img src="./images/-73.413811,45.436142.jpg" alt="No Wildfire 3" class="img-thumbnail">
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <script>var exports = {};</script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.7.0/dist/tf.min.js"></script>
-    <script src = "./dist/bundle.js"></script>
+    <script src="./dist/bundle.js"></script>
+    <script>
+        // JavaScript code for drag-and-drop functionality
+        const dropZones = document.querySelectorAll('.draggable');
+    
+        dropZones.forEach(dropZone => {
+            dropZone.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', e.target.src);
+            });
+        });
+    
+        document.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+    
+        document.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const imageUrl = e.dataTransfer.getData('text/plain');
+            if (imageUrl) {
+                const selectedImage = document.getElementById('selected-image');
+                selectedImage.src = imageUrl;
+            }
+        });
+    </script>
 </body>
+
 </html>
