@@ -2,6 +2,8 @@
 
 FirePredictionJS is a project that utilizes a machine learning model to predict wildfires. This project focuses on the deployment of the model using TensorFlow.js, allowing users to run the prediction locally on their machines. You can try out the application [here](https://fire-prediction-js.onrender.com/)! You may also follow the guide below in order to compile the application on your own machine using a local server.
 
+In order to develop this model, I used [this](https://www.kaggle.com/datasets/abdelghaniaaba/wildfire-prediction-dataset) dataset. There are also 6 test images from the datset located in the static folder, used in order to understand the model's input. Feel free to try these out by loading the application up [here](https://fire-prediction-js.onrender.com/).
+
 ## Project Structure
 
 The FirePredictionJS project is organized into two main folders:
